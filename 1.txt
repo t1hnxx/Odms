@@ -1,0 +1,99 @@
+
+
+
+	if (isset($_POST['save_edit'])){
+		$studentFname = $_POST['studentFname'];
+		$studentMname = $_POST['studentMname'];
+		$studentLname = $_POST['studentLname'];
+		$NewstudentPassword = $_POST['NewstudentPassword'];
+		$retype_studentPassword = $_POST['retype_studentPassword'];
+		
+		
+		$errorPass= false;
+		$errorEmpty = false;
+
+		$conn=mysqli_connect("localhost","root","","odms");
+		$student = $user1['studentID'];
+		
+		$result = mysqli_query($conn,"SELECT * FROM student_info WHERE studentID = '$student' limit 1");
+		$row = mysqli_fetch_assoc($result);
+		 
+
+		
+		
+
+		if($NewstudentPassword != $retype_studentPassword){
+				echo "<span style='color: maroon' class='alert alert-success d-flex align-items-center' role='alert'><i class='bi bi-exclamation-diamond-fill' style='color: #fda50d; text-shadow:
+				-1px -1px 0 black,
+				1px -1px 0 black,
+				-1px 1px 0 black,
+				1px 1px 0 black;'></i>&nbsp &nbsp Passwords do not match
+				</span>";
+				$errorPass = true;
+			}	
+
+	}	
+
+	else{
+		echo "<span style='color: maroon' class='alert alert-success d-flex align-items-center' role='alert'><br>Error Occured!<br></span>";
+	}
+
+	if($errorEmpty == false && $errorPass == false){
+		require("class/editS.php");
+	}
+	
+?>			
+			<script>
+			$errorEmpty = <?php echo $errorEmpty; ?>;
+			$errorPass = <?php echo $errorPass; ?>;
+			</script>
+			
+
+
+
+
+
+
+
+
+
+
+
+
+			<style>
+  .swal-button {
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: #ec6d18;
+  font-size: 12px;
+  border: 1px solid #3e549a;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+} </style>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<?php 
+				$errorEmpty = false;
+				$errorEmail = false;
+				$errorstudentNum = false;
+				$conn=mysqli_connect("localhost","root","","odms");
+
+				$student = $user1['studentID'];
+			$studentFname = $_POST['studentFname'];
+			$studentMname = $_POST['studentMname'];
+			$studentLname = $_POST['studentLname'];
+			$studentPassword = $_POST['retype_studentPassword'];
+			$studPass = hash('sha1', $studentPassword);
+			mysqli_query($conn, "UPDATE student_info SET studentFname = '$studentFname', studentMname = '$studentMname',studentLname = '$studentLname', studentPassword = '$studPass' WHERE studentID = '$student'");
+			?>
+
+
+<script>
+			swal({
+              title: "Profile Edited!",
+              button: "Done",
+          }).then(function() {
+              window.location = "profile.php";
+          });
+			</script>
+			
+	
+			

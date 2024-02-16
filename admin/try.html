@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--AUGUST 2, LOGIN PAGE -->
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../ODMS Logo.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+	<style>
+      body {
+        font-family: 'Kanit', serif;
+      }
+    </style>
+</head>
+
+
+
+
+<div class="d-flex flex-row container-fluid">
+<div class="col-1 text-right d-inline-block align-text-top">
+<img src="../cvsu.png" width="65px" height="65px" />
+</div>
+<div class="col-10">
+<h4 class="text-center"></h4>
+<h4 class="text-center">Document Monitoring  Report</h4></div>
+<div class="col-1 d-flex justify-content-end">
+<img src="../ODMS logo.png" width="65px" height="65px" class=""/>
+</div>
+<div class="col-1 text-right">
+</div>
+</div>
+
+
+
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Show a second modal and hide this one with the button below.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Hide this modal and show the first with the button below.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<div>
+  Div 1
+</div>
+<div id="div2" style="display:none;">
+ <table style=  "border: 1px solid #dddddd;">
+ <thead>
+   <tr>
+     <td>NAME</td>
+     <td>NUMBER</td>
+   </tr>
+ </thead>
+ <tbody>
+   <tr>
+     <td>ANO</td>
+     <td>SAAN</td>
+   </tr>
+ </tbody>
+ </table>
+</div>
+<button onclick="$('#div2').print();">
+Print html of hidden div 2
+</button>
+
+
+<script>
+  $.fn.extend({
+    print: function() {
+      var frameName = 'printIframe';
+      var doc = window.frames[frameName];
+      if (!doc) {
+        $('<iframe>').hide().attr('name', frameName).appendTo(document.body);
+        doc = window.frames[frameName];
+      }
+      doc.document.body.innerHTML = this.html();
+      doc.window.print();
+      return this;
+    }
+  });
+
+
+</script>

@@ -1,0 +1,122 @@
+ $studNum="";
+ $studentFname="";
+ $studentMname="";
+ $studentLname="";
+ $studentGender="";
+ $studentEmail="";
+ $studentPassword="";
+ $confirmation="";
+ $studentCourse="";
+ 
+ BSECE - electronics Engineering
+ BSEE - ELECTRICAL
+BSCPE - Computer Engineering
+
+
+
+
+
+BSABE - Bachelor of Science in Agricultural and Biosystems Engineering
+BSIT - Bachelor of Science in Information Technology
+BSCS - Bachelor of Science in Computer Science
+BSOA - Bachelor of Science in Office Administration
+BSCE - Bachelor of Science in Civil Engineering
+BS Arch - Bachelor of Science in Architecture
+BSECE - Bachelor of Science in Electronics Engineering
+BSEE -  Bachelor of Science in Electrical Engineering
+BSCpE - Bachelor of Science In Computer Engineering
+CTN
+BSIE - Bachelor of Science Industrial Engineering
+BS IndT - Bachelor of Science in Industrial Technology
+BS IndT AT -Automotive Technology
+BS IndT ELEX - Electronics Tecnology
+BS IndT EY - Electrical Technology
+
+
+
+
+/*function personnel(){
+    global $conn;
+
+    $facultyEmail = $_POST["facultyEmail"];
+    $facultyPassword = $_POST["facultyPassword"];
+
+    $user = mysqli_query($conn, "SELECT * FROM faculty_info WHERE facultyEmail = '$facultyEmail'");
+
+    if(mysqli_num_rows($user) > 0){
+
+        $row = mysqli_fetch_assoc($user);
+    
+        if($facultyPassword == $row['facultyPassword']){
+          echo "Login Successful";
+          $_SESSION["loginF"] = true;
+          $_SESSION["facultyID"] = $row["facultyID"];
+        }
+        else{
+          echo "<span style='color: maroon' class='alert alert-success d-flex align-items-center' role='alert'>
+          <i class='bi bi-exclamation-diamond-fill' style='color: #fda50d; text-shadow:
+          -1px -1px 0 black,
+           1px -1px 0 black,
+          -1px 1px 0 black,
+           1px 1px 0 black;'></i>&nbsp &nbsp An error occured!
+           </span>";
+          exit;
+        }
+      }
+      else{
+        echo "<span style='color: maroon' class='alert alert-success d-flex align-items-center' role='alert'>
+        <i class='bi bi-exclamation-diamond-fill' style='color: #fda50d; text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px 1px 0 black,
+         1px 1px 0 black;'></i>&nbsp &nbsp User Not Found!
+         </span>";
+        exit;
+      }
+    }
+
+    function student(){
+      global $conn;
+
+    $studentNum = $_POST["studentNum"];
+    $studentPassword = $_POST["studentPassword"];
+
+    $user = mysqli_query($conn, "SELECT * FROM student_info WHERE studentNum = '$studentNum'");
+
+    if(mysqli_num_rows($user) > 0){
+
+        $row = mysqli_fetch_assoc($user);
+    
+        if($studentPassword == $row['studentPassword']){
+          echo "Login Successful";
+          $_SESSION["loginS"] = true;
+          $_SESSION["studentID"] = $row["studentID"];
+        }
+        else{
+          echo "<span style='color: maroon' class='alert alert-success d-flex align-items-center' role='alert'>
+          <i class='bi bi-exclamation-diamond-fill' style='color: #fda50d; text-shadow:
+          -1px -1px 0 black,
+           1px -1px 0 black,
+          -1px 1px 0 black,
+           1px 1px 0 black;'></i>&nbsp &nbsp An error occured!
+           </span>";
+          exit;
+        }
+      }
+      else{
+        echo "<span style='color: maroon' class='alert alert-success d-flex align-items-center' role='alert'>
+        <i class='bi bi-exclamation-diamond-fill' style='color: #fda50d; text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px 1px 0 black,
+         1px 1px 0 black;'></i>&nbsp &nbsp User Not Found!
+         </span>";
+        exit;
+      }
+    }
+
+
+    
+
+
+*/
